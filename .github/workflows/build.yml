@@ -221,8 +221,6 @@ jobs:
           - debian11-systemd
           - debian12-systemd
           - debian13-systemd
-          - fedora39-systemd
-          - fedora40-systemd
           - fedora41-systemd
           - kali-systemd
           - ubuntu-20-systemd
