@@ -156,7 +156,7 @@ repos:
         args:
           # We have to ignore this particular vulnerability in
           # ansible-core>=2.11 as there is currently no fix.  See
-          # cisagov/skeleton-ansible-role#210 for more details.
+          # cisagov/ansible-role-systemd-timesyncd-aws#210 for more details.
           - --ignore-vuln
           - GHSA-99w6-3xph-cx78
           # Add any pip requirements files to scan
@@ -183,7 +183,7 @@ repos:
           # that the module is unknown.  In these cases it is
           # necessary to add the ansible package itself as an
           # additional dependency, with the same pinning as is done in
-          # requirements-test.txt of cisagov/skeleton-ansible-role.
+          # requirements-test.txt of cisagov/ansible-role-systemd-timesyncd-aws.
           #
           # Version 10 is required because the pip-audit pre-commit
           # hook identifies a vulnerability in ansible-core 2.16.13,
@@ -212,7 +212,7 @@ repos:
           #
           # Note that any changes made to this dependency must also be
           # made in requirements.txt in cisagov/skeleton-packer and
-          # requirements-test.txt in cisagov/skeleton-ansible-role.
+          # requirements-test.txt in cisagov/ansible-role-systemd-timesyncd-aws.
           - ansible-core>=2.17
 
   # Terraform hooks
