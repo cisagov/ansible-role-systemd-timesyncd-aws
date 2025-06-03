@@ -8,5 +8,7 @@ collections:
     version: ">=3.10.2"
 
 roles:
+  - name: systemd_timesyncd
+    src: https://github.com/cisagov/ansible-role-systemd-timesyncd
   - name: upgrade
     src: https://github.com/cisagov/ansible-role-upgrade

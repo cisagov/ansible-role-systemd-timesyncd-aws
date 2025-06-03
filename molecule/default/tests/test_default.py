@@ -4,7 +4,6 @@
 import os
 
 # Third-Party Libraries
-import pytest
 import testinfra.utils.ansible_runner
 
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
@@ -12,7 +11,11 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ).get_hosts("all")
 
 
-@pytest.mark.parametrize("x", [True])
-def test_packages(host, x):
-    """Run a dummy test, just to show what one would look like."""
-    assert x
+def test_config(host):
+    """Verify that systemd-timesyncd is correctly configured."""
+    command = "systemd-analyze cat-config systemd/timesyncd.conf"
+    cmd = host.run(command)
+    assert cmd.rc == 0, f"Command {command} did not exit with status 0."
+    assert (
+        "NTP=169.254.169.123" in cmd.stdout
+    ), f"Output of command {command} did not contain the expected content."

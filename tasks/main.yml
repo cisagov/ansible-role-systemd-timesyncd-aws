@@ -1,2 +1,18 @@
 ---
-# tasks file for skeleton
+- name: Ensure that the systemd-timesyncd config drop-in directory exists
+  ansible.builtin.file:
+    group: root
+    mode: u=rwx,g=rx,o=rx
+    owner: root
+    path: /etc/systemd/timesyncd.conf.d
+    state: directory
+
+- name: Configure systemd-timesyncd to use Amazon Time Sync Service
+  ansible.builtin.copy:
+    content: |-
+      [Time]
+      NTP=169.254.169.123
+    dest: /etc/systemd/timesyncd.conf.d/aws.conf
+    group: root
+    mode: u=rw,g=r,o=r
+    owner: root
