@@ -216,19 +216,15 @@ jobs:
           - amd64
           - arm64
         platform:
-          # Amazon Linux 2023 does not offer a systemd-timesyncd
-          # package.
-          # - amazonlinux2023-systemd
+          - amazonlinux2023-systemd
           # Debian Buster does not offer a systemd-timesyncd package.
           # - debian10-systemd
           - debian11-systemd
           - debian12-systemd
           - debian13-systemd
-          # Fedora 39, 40, and 41 do not offer a systemd-timesyncd
-          # package.
-          # - fedora39-systemd
-          # - fedora40-systemd
-          # - fedora41-systemd
+          - fedora39-systemd
+          - fedora40-systemd
+          - fedora41-systemd
           - kali-systemd
           - ubuntu-20-systemd
           - ubuntu-22-systemd

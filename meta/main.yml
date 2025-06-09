@@ -24,10 +24,9 @@ galaxy_info:
   min_ansible_version: "2.10"
   namespace: cisagov
   platforms:
-    # Amazon Linux 2023 does not offer a systemd-timesyncd package.
-    # - name: Amazon Linux
-    #   versions:
-    #     - "2023"
+    - name: Amazon Linux
+      versions:
+        - "2023"
     - name: Debian
       versions:
         # Debian Buster does not offer a systemd-timesyncd package.
@@ -35,12 +34,11 @@ galaxy_info:
         - bullseye
         - bookworm
         - trixie
-    # Fedora 39, 40, and 41 do not offer a systemd-timesyncd package.
-    # - name: Fedora
-    #   versions:
-    #     - "39"
-    #     - "40"
-    #     - "41"
+    - name: Fedora
+      versions:
+        - "39"
+        - "40"
+        - "41"
     - name: Kali
       versions:
         - "2023"
