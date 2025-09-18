@@ -9,10 +9,14 @@
 # .github/labels.yml.
 
 # Enable if Ansible playbooks are used in the repository.
-# ansible:
-#   - changed-files:
-#       - any-glob-to-any-file:
-#           - "**/ansible/**"
+ansible:
+  - changed-files:
+      - any-glob-to-any-file:
+          - defaults/**/*.yml
+          - handlers/**/*.yml
+          - meta/**/*.yml
+          - tasks/**/*.yml
+          - vars/**/*.yml
 dependencies:
   - changed-files:
       - any-glob-to-any-file:
