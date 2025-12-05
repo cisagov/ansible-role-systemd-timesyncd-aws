@@ -166,7 +166,7 @@ repos:
           - --ignore-vuln
           - GHSA-99w6-3xph-cx78
           # We have to ignore this vulnerability since we need to pin
-          # to ansible 10 for now to support our CyHy code that must
+          # to Ansible 10 for now to support our CyHy code that must
           # still run on Debian Buster.  This vulnerability is fixed
           # in ansible>=12.
           #
