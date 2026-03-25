@@ -45,7 +45,7 @@ repos:
 
   # Text file hooks
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.47.0
+    rev: v0.48.0
     hooks:
       - id: markdownlint
         args:
@@ -63,7 +63,7 @@ repos:
 
   # GitHub Actions hooks
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.36.2
+    rev: 0.37.0
     hooks:
       - id: check-github-actions
       - id: check-github-workflows
@@ -105,7 +105,7 @@ repos:
 
   # Shell script hooks
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.12.0-2
+    rev: v3.13.0-1
     hooks:
       - id: shfmt
         args:
@@ -129,13 +129,13 @@ repos:
 
   # Python hooks
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.9.3
+    rev: 1.9.4
     hooks:
       - id: bandit
         args:
           - --config=.bandit.yml
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 26.1.0
+    rev: 26.3.1
     hooks:
       - id: black
   - repo: https://github.com/PyCQA/flake8
@@ -145,7 +145,7 @@ repos:
         additional_dependencies:
           - flake8-docstrings==1.7.0
   - repo: https://github.com/PyCQA/isort
-    rev: 8.0.0
+    rev: 8.0.1
     hooks:
       - id: isort
   - repo: https://github.com/pre-commit/mirrors-mypy
@@ -193,6 +193,9 @@ repos:
 
   # Ansible hooks
   - repo: https://github.com/ansible/ansible-lint
+    # We need to stay on this version because we are still using Python 3.13 in
+    # our GitHub Actions configuration. Later versions require Python 3.14 for
+    # the hook to run.
     rev: v26.1.1
     hooks:
       - id: ansible-lint
